@@ -6,10 +6,10 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_margin="20dp"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
     
     <ImageView
-        android:src="@drawable/GithubLogo"
+        android:src="@drawable/githublogo"
         android:layout_width="150dp"
         android:layout_height="150dp"/>
     <EditText
