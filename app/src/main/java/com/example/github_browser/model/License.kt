@@ -5,8 +5,9 @@ import android.os.Parcel
 import android.os.Parcelable
 import androidx.versionedparcelable.VersionedParcelize
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
-@VersionedParcelize
+@Parcelize
 data class License(
     @SerializedName("key")
     val key: String? = "",
@@ -18,24 +19,9 @@ data class License(
     val spdxId: String? = "",
     @SerializedName("url")
     val url: String? = ""
-): Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString()
-    ) {
-    }
+): Parcelable
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(key)
-        parcel.writeString(name)
-        parcel.writeString(nodeId)
-        parcel.writeString(spdxId)
-        parcel.writeString(url)
-    }
-
+/*
     override fun describeContents(): Int {
         return 0
     }
@@ -50,3 +36,5 @@ data class License(
         }
     }
 }
+
+ */

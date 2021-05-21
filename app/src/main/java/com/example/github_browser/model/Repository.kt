@@ -4,8 +4,9 @@ import android.os.Parcel
 import android.os.Parcelable
 import androidx.versionedparcelable.VersionedParcelize
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
-@VersionedParcelize
+@Parcelize
 data class Repository(
     @SerializedName("archive_url")
     val archiveUrl: String? = "",
@@ -102,7 +103,7 @@ data class Repository(
     @SerializedName("milestones_url")
     val milestonesUrl: String? = "",
     @SerializedName("mirror_url")
-    val mirrorUrl: Any? = Any(),
+    val mirrorUrl: String? = String(),
     @SerializedName("name")
     val name: String? = "",
     @SerializedName("node_id")
@@ -153,168 +154,4 @@ data class Repository(
     val watchers: Int? = 0,
     @SerializedName("watchers_count")
     val watchersCount: Int? = 0
-): Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readString(),
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        TODO("license"),
-        parcel.readString(),
-        parcel.readString(),
-        TODO("mirrorUrl"),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        TODO("owner"),
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readValue(Int::class.java.classLoader) as? Int
-    ) {
-    }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(archiveUrl)
-        parcel.writeValue(archived)
-        parcel.writeString(assigneesUrl)
-        parcel.writeString(blobsUrl)
-        parcel.writeString(branchesUrl)
-        parcel.writeString(cloneUrl)
-        parcel.writeString(collaboratorsUrl)
-        parcel.writeString(commentsUrl)
-        parcel.writeString(commitsUrl)
-        parcel.writeString(compareUrl)
-        parcel.writeString(contentsUrl)
-        parcel.writeString(contributorsUrl)
-        parcel.writeString(createdAt)
-        parcel.writeString(defaultBranch)
-        parcel.writeString(deploymentsUrl)
-        parcel.writeString(description)
-        parcel.writeValue(disabled)
-        parcel.writeString(downloadsUrl)
-        parcel.writeString(eventsUrl)
-        parcel.writeValue(fork)
-        parcel.writeValue(forks)
-        parcel.writeValue(forksCount)
-        parcel.writeString(forksUrl)
-        parcel.writeString(fullName)
-        parcel.writeString(gitCommitsUrl)
-        parcel.writeString(gitRefsUrl)
-        parcel.writeString(gitTagsUrl)
-        parcel.writeString(gitUrl)
-        parcel.writeValue(hasDownloads)
-        parcel.writeValue(hasIssues)
-        parcel.writeValue(hasPages)
-        parcel.writeValue(hasProjects)
-        parcel.writeValue(hasWiki)
-        parcel.writeString(homepage)
-        parcel.writeString(hooksUrl)
-        parcel.writeString(htmlUrl)
-        parcel.writeValue(id)
-        parcel.writeString(issueCommentUrl)
-        parcel.writeString(issueEventsUrl)
-        parcel.writeString(issuesUrl)
-        parcel.writeString(keysUrl)
-        parcel.writeString(labelsUrl)
-        parcel.writeString(language)
-        parcel.writeString(languagesUrl)
-        parcel.writeString(mergesUrl)
-        parcel.writeString(milestonesUrl)
-        parcel.writeString(name)
-        parcel.writeString(nodeId)
-        parcel.writeString(notificationsUrl)
-        parcel.writeValue(openIssues)
-        parcel.writeValue(openIssuesCount)
-        parcel.writeValue(private)
-        parcel.writeString(pullsUrl)
-        parcel.writeString(pushedAt)
-        parcel.writeString(releasesUrl)
-        parcel.writeValue(size)
-        parcel.writeString(sshUrl)
-        parcel.writeValue(stargazersCount)
-        parcel.writeString(stargazersUrl)
-        parcel.writeString(statusesUrl)
-        parcel.writeString(subscribersUrl)
-        parcel.writeString(subscriptionUrl)
-        parcel.writeString(svnUrl)
-        parcel.writeString(tagsUrl)
-        parcel.writeString(teamsUrl)
-        parcel.writeString(treesUrl)
-        parcel.writeString(updatedAt)
-        parcel.writeString(url)
-        parcel.writeValue(watchers)
-        parcel.writeValue(watchersCount)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<Repository> {
-        override fun createFromParcel(parcel: Parcel): Repository {
-            return Repository(parcel)
-        }
-
-        override fun newArray(size: Int): Array<Repository?> {
-            return arrayOfNulls(size)
-        }
-    }
-}
+): Parcelable
