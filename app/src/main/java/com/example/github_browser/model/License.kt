@@ -21,20 +21,3 @@ data class License(
     val url: String? = ""
 ): Parcelable
 
-/*
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<License> {
-        override fun createFromParcel(parcel: Parcel): License {
-            return License(parcel)
-        }
-
-        override fun newArray(size: Int): Array<License?> {
-            return arrayOfNulls(size)
-        }
-    }
-}
-
- */

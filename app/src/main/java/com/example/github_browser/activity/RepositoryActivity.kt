@@ -18,19 +18,12 @@ class RepositoryActivity : AppCompatActivity() {
         val listOfRepos = intent?.getParcelableArrayListExtra<Repository>(KEY_REPOSITORY_DATA)
 
         listOfRepos?.let {
-
             val numberOfRepositories = getString(R.string.number_of_repos, it.size)
             findViewById<TextView>(R.id.textViewNumberOfRepos)?.text = numberOfRepositories
-
             showRepos(it)
-
-
-
         }
-
     }
-
-    private fun showRepos(listOfRepositories: ArrayList<Repository>){
+    private fun showRepos(listOfRepositories: ArrayList<Repository>) {
         val recyclerViewAdapter = RepositoryRecyclerViewAdapter(listOfRepositories)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
 
@@ -40,8 +33,6 @@ class RepositoryActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(context)
         }
     }
-
-
     companion object {
         const val KEY_REPOSITORY_DATA = "keyRepositoryData"
     }
