@@ -10,5 +10,4 @@ interface Endpoint {
 
     @GET("users/{user}/repos")
     fun getRepositoriesForUser(@Path("user") username:String) : Call<List<Repository>>
-
 }
